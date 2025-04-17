@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jake Nelson - Mechanical Engineering Technology Student</title>
+    <style>
+        /* --- Global Styles & Variables --- */
+        :root {
+            /* --- Purple & Grey Theme --- */
+            --background-color: #212121; /* Dark grey background */
+            --text-color: #e0e0e0;       /* Light grey text */
+            --heading-color: #ffffff;    /* White headings */
+            /* Purple Gradient */
+            --accent-gradient: linear-gradient(90deg, #a044ff, #6a11cb);
+            --card-background: #333333;       /* Medium-dark grey cards */
+            --border-color: #424242;       /* Medium grey border */
+            --link-color: #a044ff;       /* Purple links */
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-bottom: 0.5em;
+        }
+
+        h2 { /* Common style for section headings */
+             font-size: 1.8em;
+             margin-bottom: 1.5em;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Header Section --- */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 4em;
+            flex-wrap: wrap;
+        }
+
+        .header-text { flex-basis: 60%; }
+        .header-image { flex-basis: 35%; text-align: center; margin-top: 20px; }
+
+        .header-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            margin-bottom: 1em;
+            border: 1px solid var(--border-color);
+        }
+         .header-badge img { vertical-align: middle; height: 16px; margin-right: 5px; }
+
+        .header-text h1 {
+            font-size: 3.5em;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+            margin-bottom: 0.1em; line-height: 1.2;
+        }
+        .header-text .tagline { font-size: 1.2em; color: #aaa; }
+
+        .header-image img {
+            width: 180px; height: 180px; border-radius: 50%;
+            object-fit: cover; border: 3px solid var(--border-color);
+        }
+
+        /* --- Common Card Style for Sections --- */
+        .card {
+            margin-bottom: 4em;
+            background-color: var(--card-background);
+            padding: 2em;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+         .card h2 { /* Section headings within cards */
+             border-bottom: 2px solid var(--border-color);
+             padding-bottom: 0.3em;
+             margin-bottom: 1em;
+         }
+
+        /* --- About Section --- */
+        .about-section p { margin-bottom: 1em; }
+        .about-section p:last-child { margin-bottom: 0; }
+
+        /* --- Professional Journey Section --- */
+        .journey-section h2 { border-bottom: none; /* No border for this heading */ }
+
+        .journey-item {
+            display: flex; align-items: center; margin-bottom: 2em;
+            padding-bottom: 1.5em; border-bottom: 1px solid var(--border-color);
+        }
+         .journey-item:last-child { border-bottom: none; margin-bottom: 0; }
+        .journey-logo { flex-shrink: 0; margin-right: 1.5em; }
+        .journey-logo img {
+            width: 50px; height: 50px; border-radius: 50%; object-fit: contain;
+            background-color: #fff; padding: 5px; border: 1px solid var(--border-color);
+        }
+        .journey-details { flex-grow: 1; }
+        .journey-details h3 { font-size: 1.2em; margin-bottom: 0.1em; color: var(--heading-color); }
+        .journey-details .company { font-weight: bold; color: var(--text-color); }
+        .journey-details .title { font-size: 1em; color: #bbb; margin-bottom: 0.3em; }
+        .journey-dates { font-size: 0.9em; color: #aaa; text-align: right; flex-shrink: 0; margin-left: 1em; }
+
+        /* --- Project Highlight Section --- */
+        .project-highlight img {
+            display: block; /* Center the image */
+            max-width: 80%; /* Control image size */
+            height: auto; /* Maintain aspect ratio */
+            margin: 1.5em auto; /* Space around image */
+            border-radius: 4px; /* Slight rounding */
+            border: 1px solid var(--border-color); /* Subtle border */
+        }
+        .project-highlight p {
+            text-align: center; /* Center description */
+            font-size: 0.95em;
+            color: #ccc; /* Slightly dimmer text */
+            max-width: 70%; /* Limit description width */
+            margin: 0 auto; /* Center description text block */
+        }
+
+        /* --- Footer/Links --- */
+        .footer-links {
+            text-align: center; margin-top: 3em; padding-top: 2em;
+            border-top: 1px solid var(--border-color);
+        }
+        .footer-links a { margin: 0 15px; font-size: 1.1em; color: var(--link-color); }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            .header { flex-direction: column; text-align: center; }
+            .header-text { flex-basis: 100%; margin-bottom: 2em; }
+            .header-text h1 { font-size: 2.8em; }
+            .header-image { flex-basis: 100%; margin-top: 0; }
+            .header-image img { width: 150px; height: 150px; }
+
+            .journey-item { flex-direction: column; align-items: flex-start; border-bottom: 2px solid var(--border-color); padding-bottom: 1.5em; }
+            .journey-logo { margin-bottom: 1em; margin-right: 0; }
+            .journey-details { margin-bottom: 0.5em; }
+            .journey-dates { text-align: left; margin-left: 0; }
+
+            .project-highlight img { max-width: 95%; /* Allow image to be larger on small screens */ }
+            .project-highlight p { max-width: 90%; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header class="header">
+            <div class="header-text">
+                 <div class="header-badge">
+                     Mechanical Engineering Technology Student
+                 </div>
+                <h1>Hey, I'm Jake Nelson</h1>
+                <p class="tagline">Welcome to my professional space online.</p>
+            </div>
+            <div class="header-image">
+                <img src="IMG_2598.jpeg" alt="Jake Nelson">
+            </div>
+        </header>
+
+        <section class="about-section card"> <h2>A little about myself...</h2>
+            <p>
+                I'm a motivated Mechanical Engineering Technology student based in Knoxville, TN, passionate about design, problem-solving, and process improvement. I enjoy diving into complex challenges and applying analytical skills gained through coursework and hands-on experience.
+            </p>
+            <p>
+                My background includes practical engineering internships focused on optimizing systems and developing functional mechanical products. I thrive in team environments, leveraging communication skills honed through leadership roles in competitive robotics. Proficient in CAD (SolidWorks, Fusion) and with extensive hands-on CNC programming and operation experience, I'm focused on contributing to innovative manufacturing and engineering solutions.
+            </p>
+        </section>
+
+        <section class="journey-section"> <h2>Professional Journey</h2>
+            <div class="journey-item">
+                <div class="journey-logo"> <img src="https://edgetacticalsolutions.com/wp-content/uploads/2022/01/peraton-remotec3.png"> </div>
+                <div class="journey-details"> <h3><span class="company">Peraton Remotec</span></h3> <div class="title">Engineering Intern</div> </div>
+                <div class="journey-dates">June 2023 – Present</div>
+            </div>
+            <div class="journey-item">
+                <div class="journey-logo"> <img src="https://www.firstinspires.org/sites/default/files/uploads/resource_library/brand/thumbnails/FIRST-V.png" alt="FIRST Robotics Logo"> </div>
+                <div class="journey-details"> <h3><span class="company">FIRST Robotics Competition (FRC)</span></h3> <div class="title">Student Team Leader (South Doyle High School)</div> </div>
+                <div class="journey-dates">Aug 2021 – June 2024</div>
+            </div>
+             <div class="journey-item">
+                <div class="journey-logo"> <img src="https://www.pstcc.edu/media/pstccedu/site-assets/images/PSCC-LOGO-FC-WEB.png" alt="Pellissippi State Logo"> </div>
+                <div class="journey-details"> <h3><span class="company">Pellissippi State Community College</span></h3> <div class="title">Mechanical Engineering Technology Student</div> </div>
+                <div class="journey-dates">Expected Grad: May 2026</div>
+            </div>
+             <div class="journey-item">
+                <div class="journey-logo"> <img src="https://www.knoxschools.org//cms/lib/TN01917079/Centricity/Domain/85/sdwebsmall.png" alt="South Doyle HS Logo"> </div>
+                <div class="journey-details"> <h3><span class="company">South Doyle High School</span></h3> <div class="title">Graduated with Honors and Distinction</div> </div>
+                <div class="journey-dates">Graduated: May 2024</div>
+            </div>
+        </section>
+
+        <section class="project-highlight card"> <h2>Project Highlight</h2>
+             <img src="2024_wrist_launcher.png" alt="CAD Model of 2024 Wrist Launcher Mechanism">
+            <p>
+                CAD model of a wrist launcher mechanism designed using Autodesk Fusion, showcasing mechanical design and 3D modeling skills applied in robotics projects.
+            </p>
+        </section>
+
+        <footer class="footer-links">
+             <a href="https://www.linkedin.com/in/jacob-nelson-26a10a2b7/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:jaekpn@gmail.com">Email</a>
+        </footer>
+
+    </div> </body>
+</html>
